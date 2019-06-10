@@ -1,0 +1,17 @@
+AppBundle\Entity\Recipe:
+    paella:
+        name: 'Paella'
+        description: <paragraph()>
+        image: 'paella.jpg'
+    carbonara:
+        name: 'Pasta carbonara'
+        description: <paragraph()>
+        image: 'carbonara.jpg'
+    falafel:
+        name: 'Falafel'
+        description: <paragraph()>
+        image: 'falafel.jpg'
+    sushi:
+        name: 'Sushi'
+        description: <paragraph()>
+        image: 'sushi.jpg'
