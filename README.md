@@ -1,13 +1,5 @@
-Symfony React Sandbox
+Symfony React Todo
 =====================
-
-This sandbox provides an example of usage of [ReactBundle](https://github.com/limenius/ReactBundle) with server and client-side React rendering (universal/isomorphical) and its integration with a fitting Webpack Encore setup. It also provides an example of the usage of [LiformBundle](https://github.com/Limenius/LiformBundle) to generate a json-schema from Symfony forms and a forms and validation in React from that schema.
-
--**Note**: If you are new to React.js, please note that this sandbox or the bundle are not by any means required to use React with Symfony. This shocases how to do some advanced features such as Server Side Rendering, a better integration with forms, injecting components directly from Twig tags, that may be difficult.
-
-You can see this example live at http://symfony-react.limenius.com/
-
-It is also a fully functional Symfony application that you can use as skeleton for new projects.
 
 It has three main areas of interest:
 
@@ -15,16 +7,17 @@ It has three main areas of interest:
 * The JavaScript and CSS (SCSS) code under `assets/`.
 * The Webpack Encore configuration for client and server-side rendering at `webpack.config.js` and `webpack.config.serverside.js`.
 
-Note that you won't need to run an external node server to do server-side rendering, as we are using [PhpExecJs](https://github.com/nacmartin/phpexecjs) although ReactBundle would make it possible if we neeeded that setup.
+## Acknowledgments
+* [ReactBundle](https://github.com/limenius/ReactBundle)
+* [PhpExecJs](https://github.com/nacmartin/phpexecjs)
+* [React on Rails](https://github.com/shakacode/react_on_rails)
 
-If you are interested on this, please also check out **[React on Rails](https://github.com/shakacode/react_on_rails)** by Shakacode, as we are here basically replicating their fantastic job.
 
 
 How to run it
 =============
 
-Requirements: you need a recent version of node, and Webpack installed (you can install it with `npm install -g webpack webpack-dev-server`).
-
+    npm install -g webpack webpack-dev-server
     git clone https://github.com/Limenius/symfony-react-sandbox.git
     cd symfony-react-sandbox
     composer install
