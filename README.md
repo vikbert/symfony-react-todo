@@ -17,46 +17,30 @@ It has three main areas of interest:
 How to run it
 =============
 
-    npm install -g webpack webpack-dev-server
-    git clone https://github.com/Limenius/symfony-react-sandbox.git
+#### Step 1
+First of all, check the source code and install PHP packages:
+
+    git clone https://github.com/vikbert/symfony-react-todo.git
     cd symfony-react-sandbox
     composer install
-    npm install # or yarn install if you use yarn
 
-Configure your database editing `.env` and setting your database name, user and password. Then, create the schema and load fixtures:
+#### Step 2
+And then, run a live server with Webpack hot-reloading of assets. As Prerequisites, the following node packages should be installed:
 
-    bin/console doctrine:database:create --if-not-exists
-    bin/console doctrine:schema:create
-    bin/console doctrine:fixtures:load
+    npm install -g webpack webpack-dev-server
 
-This should populate your database with some tasty sample data.
+#### Step 3 
+Building the server-side react Webpack bundle for server side rendering:
 
-For convenience, we have included public and private encryption keys in `config/jwt` directory. Their password is "potato". Of course, if you plan to use this in a production environment, please generate new keys with a different password :). There is a file called `.env.dist` that you can rename to `.env`, or copy the relevant parts to your `.env`:
+    npm run webpack-serverside
 
-```
-JWT_PRIVATE_KEY_PATH=config/jwt/private.pem
-JWT_PUBLIC_KEY_PATH=config/jwt/public.pem
-JWT_PASSPHRASE=potato
-```
+#### Step 4
+then start the hot-reloading webpack server for the client assets: `assets/js` or `assets/css`
 
+    npm run webpack-dev
 
-And then, run a live server with Webpack hot-reloading of assets:
-
-* Building the server-side react Webpack bundle.
-
-    ./node_modules/.bin/encore dev --config webpack.config.serverside.js --watch
-
-or simply `npm run webpack-serverside`
-
-* And, In a different terminal/screen/tmux, the hot-reloading webpack server for the client assets:
-
-    ./node_modules/.bin/encore dev-server
-
-or simply `npm run webpack-dev`
-
-(Note that you need to load the resulting build bundle in your template, as we do [here](https://github.com/Limenius/symfony-react-sandbox/blob/132d5c716b8de21e2bbbeb457ccc80ea177660ea/app/Resources/views/base.html.twig#L54))
-
-* Also, you may want to run the Symfony server:
+#### Step 5
+at last, run the Symfony server to serve the symfony web:
 
     bin/console server:start
 
